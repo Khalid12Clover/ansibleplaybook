@@ -1,0 +1,13 @@
+---
+- name: ok
+  hosts: all
+  become: true
+  become_user: oracle
+  tasks:
+    - name: ok
+      file:
+        dest: /home/oracle/khalid.txt
+        state: touch
+      register: all
+    - debug:
+        var: all
